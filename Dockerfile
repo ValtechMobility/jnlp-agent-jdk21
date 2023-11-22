@@ -18,6 +18,8 @@ RUN apt-get update \
   && apt-get -y install \
     unzip \
     curl \
+    zip \
+    wget \
     rsync \
     openssh-client \
     ca-certificates-java \
