@@ -21,9 +21,15 @@ RUN apt-get update \
     rsync \
     openssh-client \
     ca-certificates-java \
-    openjdk-21-jdk \
     graphviz
 
+RUN curl -s "https://get.sdkman.io" | bash
+RUN source "$HOME/.sdkman/bin/sdkman-init.sh"
+RUN sdk install java 21-tem
+RUN sdk use java 21-tem
+
 USER ${user}
+
+RUN java --version
 
 ENTRYPOINT ["/usr/local/bin/jenkins-agent"]
