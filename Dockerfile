@@ -1,6 +1,6 @@
 FROM jenkins/inbound-agent:alpine as jnlp
 
-FROM jenkins/agent:latest-jdk17
+FROM jenkins/agent:latest-jdk21
 
 ARG version
 LABEL Description="This is a base image, which allows connecting Jenkins agents via JNLP protocols" Vendor="Jenkins project" Version="$version"
@@ -21,7 +21,7 @@ RUN apt-get update \
     rsync \
     openssh-client \
     ca-certificates-java \
-    openjdk-17-jdk \
+    openjdk-21-jdk \
     graphviz
 
 USER ${user}
