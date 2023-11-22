@@ -34,5 +34,6 @@ RUN source "$HOME/.sdkman/bin/sdkman-init.sh" && sdk install java 21-tem && sdk 
 USER ${user}
 
 RUN java --version
+RUN which java
 
 ENTRYPOINT ["/usr/local/bin/jenkins-agent"]
